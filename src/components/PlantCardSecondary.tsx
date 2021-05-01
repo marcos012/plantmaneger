@@ -1,11 +1,11 @@
-import React from "react";
-import { StyleSheet, Text, View, Animated } from "react-native";
-import { RectButton, RectButtonProps } from "react-native-gesture-handler";
-import Swipeable from "react-native-gesture-handler/Swipeable";
-import colors from "../styles/colors";
-import fonts from "../styles/fonts";
-import { SvgFromUri } from "react-native-svg";
-import { Feather } from "@expo/vector-icons";
+import React from 'react';
+import { StyleSheet, Text, View, Animated } from 'react-native';
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
+import colors from '../styles/colors';
+import fonts from '../styles/fonts';
+import { SvgFromUri } from 'react-native-svg';
+import { Feather } from '@expo/vector-icons';
 
 interface PlantProps extends RectButtonProps {
   data: {
@@ -16,11 +16,7 @@ interface PlantProps extends RectButtonProps {
   handleRemove: () => void;
 }
 
-export function PlantCardSecondary({
-  data,
-  handleRemove,
-  ...rest
-}: PlantProps) {
+export function PlantCardSecondary({ data, handleRemove, ...rest }: PlantProps) {
   return (
     <Swipeable
       overshootRight={false}
@@ -48,12 +44,12 @@ export function PlantCardSecondary({
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: '100%',
     paddingHorizontal: 10,
     paddingVertical: 25,
     borderRadius: 20,
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: colors.shape,
     marginVertical: 5,
   },
@@ -65,7 +61,7 @@ const styles = StyleSheet.create({
     color: colors.heading,
   },
   details: {
-    alignItems: "flex-end",
+    alignItems: 'flex-end',
     marginRight: 6,
   },
   timeLabel: {
@@ -85,9 +81,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.red,
     marginTop: 15,
     borderRadius: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
     right: 20,
     paddingLeft: 15,
   },

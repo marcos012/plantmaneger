@@ -1,14 +1,14 @@
-import { formatDistance } from "date-fns";
-import { pt } from "date-fns/locale";
-import React, { useEffect, useState } from "react";
-import { Alert, FlatList, Image, StyleSheet, Text, View } from "react-native";
-import waterdrop from "../assets/waterdrop.png";
-import Load from "../components/Load";
-import Header from "../components/Header";
-import { PlantCardSecondary } from "../components/PlantCardSecondary";
-import { loadPlant, PlantProps, removePlant } from "../libs/storage";
-import colors from "../styles/colors";
-import fonts from "../styles/fonts";
+import { formatDistance } from 'date-fns';
+import { pt } from 'date-fns/locale';
+import React, { useEffect, useState } from 'react';
+import { Alert, FlatList, Image, StyleSheet, Text, View } from 'react-native';
+import waterdrop from '../assets/waterdrop.png';
+import Load from '../components/Load';
+import Header from '../components/Header';
+import { PlantCardSecondary } from '../components/PlantCardSecondary';
+import { loadPlant, PlantProps, removePlant } from '../libs/storage';
+import colors from '../styles/colors';
+import fonts from '../styles/fonts';
 
 export function MyPlants() {
   const [myPlants, setMyPlants] = useState<PlantProps[]>([]);
@@ -16,22 +16,20 @@ export function MyPlants() {
   const [nextWatered, setNextWatered] = useState<string>();
 
   function handleRemove(plant: PlantProps) {
-    Alert.alert("Remover", `Deseja remover a ${plant.name}?`, [
+    Alert.alert('Remover', `Deseja remover a ${plant.name}?`, [
       {
-        text: "Não 🙏🏻",
-        style: "cancel",
+        text: 'Não 🙏🏻',
+        style: 'cancel',
       },
       {
-        text: "Sim 😥",
+        text: 'Sim 😥',
         onPress: async () => {
           try {
             await removePlant(plant.id);
 
-            setMyPlants((oldData) =>
-              oldData.filter((item) => item.id !== plant.id)
-            );
+            setMyPlants(oldData => oldData.filter(item => item.id !== plant.id));
           } catch (error) {
-            Alert.alert("Não foi possível remover! 😥");
+            Alert.alert('Não foi possível remover! 😥');
           }
         },
       },
@@ -47,7 +45,7 @@ export function MyPlants() {
         new Date().getTime(),
         {
           locale: pt,
-        }
+        },
       );
 
       setNextWatered(`Regue sua ${plantsStoraged[0].name} daqui a ${nextTime}`);
@@ -74,7 +72,7 @@ export function MyPlants() {
 
         <FlatList
           data={myPlants}
-          keyExtractor={(item) => String(item.id)}
+          keyExtractor={item => String(item.id)}
           renderItem={({ item }) => (
             <PlantCardSecondary
               data={item}
@@ -94,8 +92,8 @@ export function MyPlants() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "space-between",
+    alignItems: 'center',
+    justifyContent: 'space-between',
     paddingHorizontal: 30,
     paddingTop: 50,
     backgroundColor: colors.background,
@@ -105,9 +103,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 20,
     height: 110,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   spotlightImage: {
     width: 60,
@@ -120,7 +118,7 @@ const styles = StyleSheet.create({
   },
   plants: {
     flex: 1,
-    width: "100%",
+    width: '100%',
   },
   plantsTitle: {
     fontSize: 24,

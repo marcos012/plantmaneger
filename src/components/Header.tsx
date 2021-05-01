@@ -1,19 +1,19 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, { useEffect, useState } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
-import userImage from "../assets/marcos.png";
-import colors from "../styles/colors";
-import fonts from "../styles/fonts";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect, useState } from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import userImage from '../assets/marcos.png';
+import colors from '../styles/colors';
+import fonts from '../styles/fonts';
 
 export default function Header() {
   const [userName, setUserName] = useState<string>();
 
   useEffect(() => {
     async function loadStorageUserName() {
-      const user = await AsyncStorage.getItem("@plantmanager:user");
+      const user = await AsyncStorage.getItem('@plantmanager:user');
 
-      setUserName(user || "");
+      setUserName(user || '');
     }
 
     loadStorageUserName();
@@ -33,10 +33,10 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingVertical: 20,
     marginTop: getStatusBarHeight(),
   },

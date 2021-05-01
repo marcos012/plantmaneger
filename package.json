@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "server": "json-server ./src/services/server.json --host 192.168.15.8 --port 3333 --delay 700"
+    "server": "json-server ./src/services/server.json --host 192.168.15.8 --port 3333 --delay 700",
+    "format": "npx prettier --write ."
   },
   "dependencies": {
     "@expo-google-fonts/jost": "^0.1.0",
@@ -40,6 +41,7 @@
     "@babel/core": "^7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
+    "prettier": "2.2.1",
     "typescript": "~4.0.0"
   },
   "private": true

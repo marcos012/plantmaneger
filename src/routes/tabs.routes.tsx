@@ -1,10 +1,10 @@
-import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import colors from "../styles/colors";
-import { MaterialIcons } from "@expo/vector-icons";
-import { MyPlants } from "../pages/MyPlants";
-import PlantSelect from "../pages/PlantSelect";
-import { Platform } from "react-native";
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import colors from '../styles/colors';
+import { MaterialIcons } from '@expo/vector-icons';
+import { MyPlants } from '../pages/MyPlants';
+import PlantSelect from '../pages/PlantSelect';
+import { Platform } from 'react-native';
 
 const AppTab = createBottomTabNavigator();
 
@@ -14,9 +14,9 @@ const AuthRoutes: React.FC = () => {
       tabBarOptions={{
         activeTintColor: colors.green,
         inactiveTintColor: colors.heading,
-        labelPosition: "beside-icon",
+        labelPosition: 'beside-icon',
         style: {
-          paddingVertical: Platform.OS === "ios" ? 20 : 0,
+          paddingVertical: Platform.OS === 'ios' ? 20 : 0,
           height: 60,
         },
       }}
@@ -26,11 +26,7 @@ const AuthRoutes: React.FC = () => {
         component={PlantSelect}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <MaterialIcons
-              name="add-circle-outline"
-              size={size}
-              color={color}
-            />
+            <MaterialIcons name="add-circle-outline" size={size} color={color} />
           ),
         }}
       />
@@ -40,11 +36,7 @@ const AuthRoutes: React.FC = () => {
         component={MyPlants}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <MaterialIcons
-              name="format-list-bulleted"
-              size={size}
-              color={color}
-            />
+            <MaterialIcons name="format-list-bulleted" size={size} color={color} />
           ),
         }}
       />
